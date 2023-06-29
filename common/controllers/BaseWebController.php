@@ -15,7 +15,8 @@ class BaseWebController extends \yii\web\Controller
         return [
             'access' => [
                 'class' => AccessControl::class,
-                'only' => ['index', 'view', 'about', 'contact'],
+//                'only' => ['index', 'view', 'about', 'contact'],
+                'except' => ['login'],
                 'rules' => [
                     [
                         'allow' => true,
