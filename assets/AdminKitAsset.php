@@ -12,7 +12,7 @@ class AdminKitAsset extends AssetBundle
         'vendors/iconfonts/mdi/css/materialdesignicons.min.css',
         'vendors/css/vendor.bundle.base.css',
         'css/style.css',
-        'https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap'
+//        'https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap'
     ];
 
     public $js = [
@@ -25,6 +25,6 @@ class AdminKitAsset extends AssetBundle
 
 
     public $depends = [
-//        'yii\web\YiiAsset'
+        'yii\web\YiiAsset'
     ];
 }
