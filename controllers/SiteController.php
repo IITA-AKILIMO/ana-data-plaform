@@ -30,9 +30,10 @@ class SiteController extends BaseWebController
      *
      * @return Response|string
      */
-    public function actionLogin()
+    public function actionLogin(): Response|string
     {
         $this->layout = 'login';
+
         $this->view->title = 'Login';
         if (!Yii::$app->user->isGuest) {
             return $this->goHome();
@@ -40,12 +41,13 @@ class SiteController extends BaseWebController
 
         $model = new LoginForm();
 
-        if (Yii::$app->request->isPost) {
-            return Json::encode(Yii::$app->request->post());
+        if ($model->load(Yii::$app->request->post())) {
+            $remember = Yii::$app->request->post('rememberMe', false);
+            $model->rememberMe = $remember == 'on';
+            if ($model->login()) {
+                return $this->goBack();
+            }
         }
-//        if ($model->load(Yii::$app->request->post()) && $model->login()) {
-//            return $this->goBack();
-//        }
 
         $model->password = '';
         return $this->render('login', [
