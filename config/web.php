@@ -1,19 +1,18 @@
 <?php
 
-$params = require __DIR__ . '/params.php';
-$db = require __DIR__ . '/db.php';
+$params = require_once __DIR__ . '/params.php';
+$db = require_once __DIR__ . '/db.php';
 
 $config = [
-    'id' => 'basic',
+    'id' => 'ana',
     'basePath' => dirname(__DIR__),
     'bootstrap' => ['log'],
     'aliases' => [
         '@bower' => '@vendor/bower-asset',
-        '@npm'   => '@vendor/npm-asset',
+        '@npm' => '@vendor/npm-asset',
     ],
     'components' => [
         'request' => [
-            // !!! insert a secret key in the following (if it is empty) - this is required by cookie validation
             'cookieValidationKey' => 'yJQPWgze0a2PyYRRYclChRoWKn7bYZuw',
         ],
         'cache' => [
@@ -42,14 +41,14 @@ $config = [
             ],
         ],
         'db' => $db,
-        /*
         'urlManager' => [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
             'rules' => [
+                '<controller>/<action:(update|delete|view)>/<id:\d+>' => '<controller>/<action>',
+                '<module>/<controller>/<action:(update|delete|view)>/<id:\d+>' => '<module>/<controller>/<action>',
             ],
         ],
-        */
     ],
     'params' => $params,
 ];
