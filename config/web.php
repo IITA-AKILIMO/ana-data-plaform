@@ -2,16 +2,29 @@
 
 $params = require_once __DIR__ . '/params.php';
 $db = require_once __DIR__ . '/db.php';
+$mailer = require_once __DIR__ . '/mailer.php';
 
 $config = [
     'id' => 'ana',
+    'name' => 'A.N.A data portal',
     'basePath' => dirname(__DIR__),
+    'timeZone' => 'UTC',
     'bootstrap' => ['log'],
     'aliases' => [
         '@bower' => '@vendor/bower-asset',
         '@npm' => '@vendor/npm-asset',
     ],
     'components' => [
+        /* custom view template */
+        'view' => [
+            'theme' => [
+//                'basePath' => '@app/themes/basic',
+//                'baseUrl' => '@web/themes/basic',
+                'pathMap' => [
+                    '@app/views' => '@app/themes/admin-kit'
+                ],
+            ]
+        ],
         'request' => [
             'cookieValidationKey' => 'yJQPWgze0a2PyYRRYclChRoWKn7bYZuw',
         ],
@@ -25,12 +38,7 @@ $config = [
         'errorHandler' => [
             'errorAction' => 'site/error',
         ],
-        'mailer' => [
-            'class' => \yii\symfonymailer\Mailer::class,
-            'viewPath' => '@app/mail',
-            // send all mails to a file by default.
-            'useFileTransport' => true,
-        ],
+        'mailer' => $mailer,
         'log' => [
             'traceLevel' => YII_DEBUG ? 3 : 0,
             'targets' => [
