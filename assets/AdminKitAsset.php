@@ -3,6 +3,7 @@
 namespace app\assets;
 
 use yii\web\AssetBundle;
+use yii\web\View;
 
 class AdminKitAsset extends AssetBundle
 {
@@ -16,15 +17,18 @@ class AdminKitAsset extends AssetBundle
     ];
 
     public $js = [
+//        'js/hoverable-collapse.js',
         'vendors/js/vendor.bundle.base.js',
-        'vendors/js/vendor.bundle.addons.js',
+//        'vendors/js/vendor.bundle.addons.js',
         'js/off-canvas.js',
         'js/misc.js',
-        'js/dashboard.js',
+//        'js/dashboard.js',
     ];
 
 
     public $depends = [
-        'yii\web\YiiAsset'
+        'yii\web\YiiAsset',
+        'yii\bootstrap5\BootstrapPluginAsset',
+        'app\assets\YarnAsset',
     ];
 }
