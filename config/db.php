@@ -15,8 +15,8 @@ $db = [
 
 
 $dbLocal = [];
-if (file_exists(__DIR__ . '/db_test.php')) {
-    $dbLocal = require_once(__DIR__ . '/db_test.php');
+if (file_exists(__DIR__ . '/db_local.php')) {
+    $dbLocal = require_once(__DIR__ . '/db_local.php');
 }
 
 return yii\helpers\ArrayHelper::merge(
