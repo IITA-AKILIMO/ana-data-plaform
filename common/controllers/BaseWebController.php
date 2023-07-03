@@ -27,7 +27,7 @@ class BaseWebController extends \yii\web\Controller
             'verbs' => [
                 'class' => VerbFilter::class,
                 'actions' => [
-                    'login' => ['get'],
+                    'login' => ['post'],
                     'logout' => ['post'],
                 ],
             ],
