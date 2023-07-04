@@ -1,10 +1,3 @@
-<?php
-
-/** @var yii\web\View $this */
-/** @var yii\bootstrap5\ActiveForm $form */
-
-?>
-
 <?= alexantr\elfinder\ElFinder::widget([
     'connectorRoute' => ['file-manager/connector'],
     'settings' => [
@@ -17,3 +10,12 @@
     'buttonNoConflict' => true,
 ]) ?>
 
+
+<!--?= alexantr\elfinder\InputFile::widget([
+    'name' => 'attributeName',
+    'clientRoute' => 'file-manager/input',
+    'filter' => ['image'],
+    'preview' => function ($value) {
+        return yii\helpers\Html::img($value, ['width' => 200]);
+    },
+]) ?-->

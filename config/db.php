@@ -1,14 +1,25 @@
 <?php
 
-return [
+$db = [
     'class' => 'yii\db\Connection',
-    'dsn' => 'mysql:host=localhost;dbname=yii2basic',
+    'dsn' => 'mysql:host=localhost;dbname=akilimo_ana',
     'username' => 'root',
     'password' => '',
     'charset' => 'utf8',
 
     // Schema cache options (for production environment)
-    //'enableSchemaCache' => true,
-    //'schemaCacheDuration' => 60,
-    //'schemaCache' => 'cache',
+//    'enableSchemaCache' => true,
+//    'schemaCacheDuration' => 60,
+//    'schemaCache' => 'cache',
 ];
+
+
+$dbLocal = [];
+if (file_exists(__DIR__ . '/db_local.php')) {
+    $dbLocal = require_once(__DIR__ . '/db_local.php');
+}
+
+return yii\helpers\ArrayHelper::merge(
+    $db,
+    $dbLocal
+);
