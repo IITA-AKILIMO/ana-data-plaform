@@ -10,13 +10,13 @@ use yii\bootstrap5\Html;
 
 ?>
 <div class="row w-100">
-    <div class="col-lg-4 mx-auto">
-        <div class="auth-form-light text-left p-5">
-            <div class="brand-logo">
-                <?= Html::img('@web/theme/images/logo.svg') ?>
+    <div class="col-lg-6 mx-auto">
+        <div class="p-5">
+            <div class="mx-auto">
+                <?= Html::img('@web/img/akilimo_logo.svg',['widths'=>'120']) ?>
             </div>
-            <h4>Hello! let's get started</h4>
-            <h6 class="font-weight-light">Sign in to continue.</h6>
+
+            <h6 class="font-weight-light m-2">Sign in to continue.</h6>
 
             <?php $form = ActiveForm::begin([
                 'id' => 'login-form',
@@ -41,21 +41,14 @@ use yii\bootstrap5\Html;
 
 
             <div class="form-group">
-                <div>
+                <div class="d-grid gap-2 col-6 mx-auto">
                     <?= Html::submitButton('SIGN IN', [
-                        'class' => 'btn btn-block btn-gradient-primary btn-lg font-weight-medium auth-form-btn',
+                        'class' => 'btn btn-primary btn-lg',
                         'name' => 'login-button'
                     ]) ?>
                 </div>
             </div>
 
-
-            <!--            <div class="my-2 d-flex justify-content-between align-items-center">-->
-            <!--                --><?php //= $form->field($model, 'rememberMe')->checkbox([
-            //                    'template' => "<div class=\"form-check\">{input} {label}</div>\n<div class=\"col-lg-8\">{error}</div>",
-            //                    'class' => 'form-check-input'
-            //                ])->label(false) ?>
-            <!--            </div>-->
 
             <div class="my-2 d-flex justify-content-between align-items-center">
                 <div class="form-check">

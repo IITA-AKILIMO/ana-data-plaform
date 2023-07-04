@@ -3,9 +3,8 @@
 /** @var yii\web\View $this */
 /** @var yii\bootstrap5\ActiveForm $form */
 
-\alexantr\elfinder\ElFinderAsset::register($this)
 ?>
-    ?>
+
 <?= alexantr\elfinder\ElFinder::widget([
     'connectorRoute' => ['file-manager/connector'],
     'settings' => [

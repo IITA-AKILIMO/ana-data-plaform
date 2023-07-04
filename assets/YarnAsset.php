@@ -7,13 +7,14 @@ use yii\web\View;
 class YarnAsset extends \yii\web\AssetBundle
 {
     public $sourcePath = '@bower';
-    public $jsOptions = [
-        'position' => View::POS_HEAD
-    ];
+//    public $jsOptions = [
+//        'position' => View::POS_HEAD
+//    ];
     public $publishOptions = [
         //'forceCopy'=>true,
     ];
     public $css = [
+        'mdi/css/materialdesignicons.css?89',
     ];
 
     public $js = [
