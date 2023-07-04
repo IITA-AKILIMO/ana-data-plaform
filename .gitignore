@@ -34,5 +34,4 @@ tests/_support/_generated
 
 #vagrant folder
 /.vagrant
-web/theme
 config/db_local.php
