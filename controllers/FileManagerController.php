@@ -56,16 +56,16 @@ class FileManagerController extends \app\common\controllers\BaseWebController
                             'path' => Yii::getAlias('@webroot') . DIRECTORY_SEPARATOR . 'uploads',
                             'URL' => Yii::getAlias('@web') . '/uploads/',
                             'mimeDetect' => 'internal',
-                            'uploadAllow' => array('text/csv', 'application/json', 'image/png', 'image/jpeg'),
-                            'uploadOrder' => array('allow', 'deny'),
+                            'uploadAllow' => ['text/csv', 'application/json', 'image/png', 'image/jpeg'],
+                            'uploadOrder' => ['allow', 'deny'],
                             'uploadMaxSize' => '20M',
 //                            'copyOverwrite' => false,
 //                            'allowShortcuts' => false,
 //                            'dragUploadAllow' => true,
-                            'imgLib' => 'gd',
+//                            'imgLib' => 'gd',
                             'disabled' => ['cut', 'copy', 'paste', 'delete', 'mkdir', 'empty', 'hide'],
                             'commands' => ['upload'],
-                            'defaults' => ['read' => true, 'write' => true, 'locked' => false],
+                            'defaults' => ['read' => true, 'write' => false, 'locked' => true],
                             'accessControl' => function ($attr, $path) {
                                 // hide files/folders which begins with dot
                                 return (str_starts_with(basename($path), '.')) ?
