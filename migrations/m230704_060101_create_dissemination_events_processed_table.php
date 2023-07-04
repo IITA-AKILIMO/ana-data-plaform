@@ -4,7 +4,7 @@ use yii\db\Schema;
 
 class m230704_060101_create_dissemination_events_processed_table extends \app\common\migration\BaseMigration
 {
-    public $tableName = '{{%dissemination_events_processed}}';
+    public string $tableName = '{{%dissemination_events_processed}}';
 
     public function safeUp(): void
     {
